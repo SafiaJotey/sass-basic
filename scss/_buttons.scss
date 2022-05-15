@@ -1,0 +1,19 @@
+// to show shared % is used
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+  &:hover {
+    transform: scale(0.98);
+  }
+  color: white;
+}
+.btn-primary {
+  @extend %btn;
+  background-color: $lighten-primary;
+}
+.btn-secondary {
+  @extend %btn;
+  background-color: $lighten-secondary;
+}

@@ -1,0 +1,23 @@
+$light-color: #eef0f4;
+$font-stack: Arial, Helvetica, sans-serif;
+$base-color: rgb(68, 68, 68);
+$promary-color: #0e6cff;
+$secondary-color: #ff8700;
+$lighten-primary: lighten($promary-color, 20%);
+$lighten-secondary: lighten($secondary-color, 20%);
+
+//set text color based on bg
+
+@function set-text-color($color) {
+  @if (lightness($color) >70) {
+    @return $base-color;
+  } @else {
+    @return rgb(151, 0, 0);
+  }
+}
+//set bg color
+//migin is as function but doesn't return anything
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
